@@ -94,3 +94,13 @@ Siga-me nas redes sociais ou entre em contato para sugestões ou dúvidas:
     <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
 </div>
+
+## 🖼️ Prints da Aplicação
+
+### Print 1: Adicionando Amigos
+
+![Adicionando Amigos](assets/imagem1.png)
+
+### Print 2: Resultado do Sorteio
+
+![Resultado do Sorteio](assets/imagem2.png)
