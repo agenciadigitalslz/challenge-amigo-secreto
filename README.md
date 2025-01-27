@@ -30,7 +30,7 @@ Para rodar este projeto localmente, você só precisa de um navegador moderno. O
 1. **Clone ou baixe o repositório**:
    - Para clonar o repositório, use o comando:
    ```bash
-   git clone https://github.com/seuusuario/amigo-secreto.git
+   git clone https://github.com/agenciadigitalslz/challenge-amigo-secreto.git
    ```
 
 2. **Abra o arquivo `index.html`**:
@@ -73,7 +73,7 @@ Se você quiser contribuir com o projeto, sinta-se à vontade para fazer um fork
 
 ## 🔗 Links Importantes
 
-- [GitHub do projeto](https://github.com/seuusuario/amigo-secreto)
+- [GitHub do projeto](https://github.com/agenciadigitalslz/challenge-amigo-secreto)
 
 ## 📈 Estatísticas
 
@@ -83,7 +83,7 @@ Se você quiser contribuir com o projeto, sinta-se à vontade para fazer um fork
 
 Siga-me nas redes sociais ou entre em contato para sugestões ou dúvidas:
 
-<div align="center">
+<div align="left">
   <a href="https://www.instagram.com/agenciadigitalslz/" target="_blank">
     <img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
   </a>
