@@ -1,41 +1,95 @@
+// Array para armazenar os nomes dos amigos
+let amigos = [];
+
 function adicionarAmigo() {
-    const nomeAmigo = document.getElementById('amigo').value.trim(); // Remove espaços extras
-    const listaAmigos = document.getElementById('listaAmigos');
+    const inputAmigo = document.getElementById('amigo');
+    const nomeAmigo = inputAmigo.value.trim(); // Remove espaços em branco antes e depois
 
-    if (nomeAmigo === "") {
-        alert("Por favor, digite um nome válido.");
+    // Valida se o nome está vazio
+    if (!nomeAmigo) {
+        alert("Por favor, insira o nome de um amigo antes de adicionar.");
+        inputAmigo.focus(); // Mantém o foco no campo de input
         return;
     }
 
-    // Verifica se o nome já está na lista
-    const nomesExistentes = Array.from(listaAmigos.children).map(li => li.textContent);
-    if (nomesExistentes.includes(nomeAmigo)) {
-        alert("Este nome já foi adicionado.");
+    // Verifica se o nome já foi adicionado
+    if (amigos.includes(nomeAmigo)) {
+        alert(`O nome "${nomeAmigo}" já está na lista!`);
+        inputAmigo.value = ""; // Limpa o campo para facilitar novas inserções
+        inputAmigo.focus(); // Foco no input para tentar outro nome
         return;
     }
 
-    // Cria um novo item na lista
-    const novoAmigo = document.createElement('li');
-    novoAmigo.textContent = nomeAmigo;
-    listaAmigos.appendChild(novoAmigo);
+    // Verifica se o limite de 50 nomes foi atingido
+    if (amigos.length >= 90) {
+        alert("O limite de 90 nomes foi atingido.");
+        inputAmigo.value = "";
+        inputAmigo.focus();
+        return;
+    }
 
-    // Limpa o campo de input
-    document.getElementById('amigo').value = "";
+    // Adiciona o nome ao array e atualiza a lista na tela
+    amigos.push(nomeAmigo);
+    atualizarListaAmigos();
+
+    // Limpa o campo e foca novamente para facilitar a inserção de novos nomes
+    inputAmigo.value = "";
+    inputAmigo.focus();
+}
+
+function atualizarListaAmigos() {
+    const listaAmigosContainer = document.getElementById('listaAmigosContainer');
+    listaAmigosContainer.innerHTML = ""; // Limpa o container para recriá-lo
+
+    // Cria colunas a cada 5 nomes
+    for (let i = 0; i < amigos.length; i += 5) {
+        const coluna = document.createElement('ul');
+        coluna.classList.add('name-list');
+
+        amigos.slice(i, i + 5).forEach(amigo => {
+            const novoAmigo = document.createElement('li');
+            novoAmigo.textContent = amigo; // Adiciona o nome como texto
+            coluna.appendChild(novoAmigo); // Adiciona o item à coluna
+        });
+
+        listaAmigosContainer.appendChild(coluna); // Adiciona a coluna ao container
+    }
 }
 
 function sortearAmigo() {
-    const listaAmigos = document.getElementById('listaAmigos');
     const resultado = document.getElementById('resultado');
-    const amigos = listaAmigos.children;
 
+    // Verifica se há amigos para sortear
     if (amigos.length === 0) {
-        alert("Adicione amigos à lista antes de sortear.");
+        alert("Não é possível sortear. Adicione amigos à lista primeiro.");
         return;
     }
 
-    // Sorteia um índice aleatório e exibe o nome correspondente
+    // Realiza o sorteio de forma aleatória
     const indiceSorteado = Math.floor(Math.random() * amigos.length);
-    const amigoSorteado = amigos[indiceSorteado].textContent;
+    const amigoSorteado = amigos[indiceSorteado];
 
-    resultado.innerHTML = `O amigo sorteado foi: <strong>${amigoSorteado}</strong>`;
+    // Exibe o resultado do sorteio
+    resultado.innerHTML = `🎉 O amigo sorteado foi: <strong>${amigoSorteado}</strong> 🎉`;
 }
+
+function novoSorteio() {
+    amigos = [];
+    atualizarListaAmigos();
+    document.getElementById('resultado').innerHTML = "";
+    document.getElementById('amigo').value = "";
+    document.getElementById('amigo').focus();
+}
+
+// Função para detectar a tecla Enter
+function lidarComEnter(event) {
+    if (event.key === "Enter") {
+        adicionarAmigo(); // Adiciona o amigo quando Enter for pressionado
+    }
+}
+
+// Configura os eventos ao carregar o DOM
+document.addEventListener('DOMContentLoaded', () => {
+    const inputAmigo = document.getElementById('amigo');
+    inputAmigo.addEventListener('keydown', lidarComEnter); // Detecta Enter no campo de input
+});

@@ -1,191 +1,243 @@
+/* Importando a fonte personalizada "Krona One" do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+/* Definindo cores principais do site para garantir consistência no design */
 :root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
-    --color-text: #444444;
-    --color-white: #FFFFFF;
+    --color-primary: #fe652b; /* Cor principal, usada para destacar botões e títulos */
+    --color-secondary: #000000; /* Cor de fundo secundária, para contraste */
+    --color-tertiary: #C4C4C4; /* Cor de destaque suave para áreas como listas */
+    --color-button: #fe652b; /* Cor de fundo dos botões */
+    --color-button-hover: #e55720; /* Cor de fundo dos botões ao passar o mouse */
+    --color-text: #444444; /* Cor do texto, para legibilidade */
+    --color-white: #FFFFFF; /* Cor de fundo branca para contraste */
 }
 
-/* Estilos gerais */
+/* Resetando margens e padding para evitar inconsistências de layout */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Para garantir que o padding e a borda não afetem as dimensões dos elementos */
 }
 
+/* Configurações gerais do body, incluindo o fundo com uma imagem e gradiente */
 body {
     height: 100vh;
-    background-color: var(--color-primary);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('assets/nova.webp') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center -220px; /* Ajustando a posição da imagem para não ficar tão alta */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Inter", sans-serif;
+    justify-content: center; /* Centralizando o conteúdo horizontalmente */
+    align-items: center; /* Centralizando o conteúdo verticalmente */
+    font-family: "Krona One", sans-serif; /* Fonte estilizada para uma aparência única */
+    color: var(--color-text); /* Cor de texto que vai ser aplicada a todo o conteúdo */
 }
 
+/* O conteúdo principal da página */
 .main-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Organizando os elementos de forma vertical */
     height: 100%;
     width: 100%;
 }
 
-/* Banner */
+/* A barra de cabeçalho com o título principal */
 .header-banner {
-    flex: 40%;
+    flex: 50%; /* O banner ocupa metade da tela */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0 0;
+    justify-content: center; /* Alinhando o título no centro horizontalmente */
+    align-items: center; /* Alinhando o título no centro verticalmente */
+    padding: 10px 0 0; /* Ajustando o padding para não sobrecarregar o espaço */
 }
 
-/* Seção de entrada */
-.input-section {
-    flex: 60%;
-    background-color: var(--color-secondary);
-    border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Títulos */
+/* Estilizando o título principal */
 .main-title {
-    font-size: 48px;
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--color-white);
+    font-size: 48px; /* Tamanho grande para chamar atenção */
+    font-family: "Krona One", sans-serif;
+    font-weight: 900; /* Tornando o título mais forte */
+    color: var(--color-white); /* Cor branca para contraste com o fundo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adicionando uma sombra suave para destacar o título */
 }
 
+/* Seção onde o usuário vai digitar os nomes dos amigos */
+.input-section {
+    flex: 60%; /* A seção ocupa 60% do espaço disponível */
+    background-color: var(--color-secondary); /* Fundo preto para dar destaque ao conteúdo */
+    border: 1px solid #000; /* Borda sólida para definir os limites */
+    border-radius: 35px 35px 0 0; /* Bordas arredondadas para um efeito mais suave */
+    display: flex;
+    flex-direction: column; /* Organizando os elementos verticalmente */
+    align-items: center; /* Alinhando os elementos no centro */
+    padding: 20px; /* Garantindo um espaçamento confortável dentro da seção */
+    width: 100%; /* Preenchendo toda a largura disponível */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para dar um toque de profundidade */
+}
+
+/* Título secundário para a seção de entrada */
 .section-title {
-    font-family: "Inter", sans-serif;
+    font-family: "Krona One", sans-serif;
     font-size: 36px;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin: 10px 0;
-    text-align: center;
+    font-weight: 700; /* Destacando o título com peso maior */
+    color: var(--color-primary); /* Cor principal para os títulos */
+    margin: 10px 0; /* Espaçamento superior e inferior */
+    text-align: center; /* Centralizando o título */
 }
 
-/* Contêineres de entrada e botão */
+/* Estilos para o contêiner de input e botão */
 .input-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Alinhando os elementos no centro */
     width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
+    max-width: 600px; /* Limitando o tamanho máximo */
+    margin-top: 20px; /* Espaçamento superior para dar respiro */
 }
 
+/* Estilos para o campo de entrada de nome */
 .input-name {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
-    font-size: 16px;
-    transition: all 0.3s ease-in-out;
+    width: 100%; /* O campo de input ocupa toda a largura disponível */
+    padding: 10px; /* Espaçamento interno para o texto não ficar colado nas bordas */
+    border: 2px solid #000; /* Borda preta para definir o campo */
+    border-radius: 20px 0 0 20px; /* Bordas arredondadas para um visual mais agradável */
+    font-size: 25px; /* Tamanho de fonte maior para facilitar a leitura */
+    transition: all 0.3s ease-in-out; /* Transição suave ao interagir com o campo */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar o campo */
 }
 
+/* Foco no campo de input para tornar a interação mais clara */
 .input-name:focus {
-    outline: none;
-    border-color: var(--color-button);
-    box-shadow: 0 0 10px var(--color-button);
+    outline: none; /* Removendo o contorno padrão */
+    border-color: var(--color-button); /* Mudando a cor da borda quando o campo está em foco */
+    box-shadow: 0 0 10px var(--color-button); /* Adicionando uma sombra de destaque */
 }
 
-/* Botões */
+/* Estilo para os botões */
 button {
-    padding: 15px 30px;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    border: 2px solid #000;
-    border-radius: 25px;
+    padding: 10px 10px;
+    font-family: "Krona One", sans-serif;
+    font-size: 15px;
+    border: 3px solid #000;
+    border-radius: 15px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; /* Transições suaves para um visual interativo */
+    padding: 15px 20px; /* Ajustando o padding para mais conforto */
 }
 
+/* Estilo para o botão de adicionar amigo */
 .button-add {
-    background: linear-gradient(90deg, var(--color-button), var(--color-button-hover));
-    color: white;
-    font-weight: bold;
-    border-radius: 0 25px 25px 0;
+    background: linear-gradient(90deg, var(--color-button), var(--color-button-hover)); /* Gradiente no fundo */
+    color: white; /* Cor do texto */
+    font-weight: bold; /* Deixando o texto mais pesado para dar mais ênfase */
+    border-radius: 0 25px 25px 0; /* Bordas arredondadas para o botão */
 }
 
+/* Efeito ao passar o mouse sobre o botão de adicionar amigo */
 .button-add:hover {
-    background: var(--color-button-hover);
+    background: var(--color-button-hover); /* Mudando a cor de fundo ao passar o mouse */
 }
 
-/* Listas */
-ul {
-    list-style-type: none;
-    color: var(--color-text);
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    margin: 20px 0;
+/* Listas de amigos adicionados */
+.lista-amigos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centralizando as listas de amigos */
+    gap: 20px; /* Espaço entre os itens */
+    margin-top: 20px; /* Espaçamento superior para separar da seção anterior */
 }
 
-ul li:nth-child(odd) {
-    background-color: #f9f9f9;
-}
-
-ul li:nth-child(even) {
-    background-color: #eaeaea;
-}
-
-.result-list {
-    margin-top: 15px;
-    color: #05DF05;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-    background-color: #dff5df;
+/* Estilo para cada nome na lista de amigos */
+.name-list {
+    list-style-type: none; /* Removendo a marcação de lista padrão */
+    color: var(--color-text); /* Cor do texto */
+    font-family: "Krona One", sans-serif;
+    font-size: 18px; /* Tamanho de fonte adequado para leitura */
+    margin: 0;
     padding: 10px;
+    background-color: var(--color-tertiary); /* Fundo suave para destacar o nome */
+    border-radius: 10px; /* Bordas arredondadas */
+    border: 1px solid var(--color-tertiary); /* Borda suave */
+    min-width: 150px; /* Largura mínima para manter o layout uniforme */
+}
+
+/* Estilo alternado para as listas (odd/even) */
+.name-list li:nth-child(odd) {
+    background-color: #ffffff; /* Cor de fundo alternada */
+    padding: 5px;
     border-radius: 10px;
 }
 
-/* Botão de sortear título */
-.button-draw {
+.name-list li:nth-child(even) {
+    background-color: #a7a7a7; /* Cor de fundo alternada */
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* Estilo para o resultado do sorteio */
+.result-list {
+    margin-top: 5px;
+    color: #d05b31; /* Cor laranja para destacar */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #ffffff; /* Fundo branco para contraste */
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 3px solid #d05b31; /* Borda colorida para destacar */
+}
+
+/* Botões de sorteio e novo sorteio */
+.button-draw, .button-new {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 10px 40px;
-    color: var(--color-white);
-    background-color: var(--color-button);
-    font-size: 16px;
-    transition: all 0.3s ease-in-out;
+    padding: 10px 20px;
+    color: var(--color-white); /* Texto branco para contraste */
+    background-color: var(--color-button); /* Cor de fundo */
+    font-size: 15px;
+    transition: all 0.3s ease-in-out; /* Transição suave */
+    margin-top: 10px; /* Espaçamento superior */
 }
 
-.button-draw img {
-    margin-right: 40px;
+/* Efeito ao passar o mouse sobre os botões */
+.button-draw:hover, .button-new:hover {
+    background-color: var(--color-button-hover); /* Mudança de cor ao passar o mouse */
 }
 
-.button-draw:hover {
-    background-color: var(--color-button-hover);
-}
-
-/* Responsividade */
+/* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
+    body {
+        background-position: center -100px; /* Ajustando a posição da imagem para telas menores */
+    }
+
     .main-title {
-        font-size: 36px;
+        font-size: 36px; /* Ajustando o tamanho do título */
     }
 
     .section-title {
-        font-size: 28px;
+        font-size: 28px; /* Ajustando o tamanho do título da seção */
     }
 
     button {
-        padding: 10px 20px;
+        padding: 10px 20px; /* Ajustando o padding dos botões */
     }
 
     .input-wrapper {
-        flex-direction: column;
+        flex-direction: column; /* Mudando a direção do layout para melhor exibição em dispositivos menores */
     }
 
-    .button-draw {
+    .button-draw, .button-new {
         flex-direction: column;
         text-align: center;
+    }
+
+    .main-content {
+        padding: 20px; /* Ajustando o padding para garantir que o conteúdo não fique amontoado */
+    }
+
+    .input-name {
+        font-size: 20px; /* Ajustando o tamanho da fonte do campo de input */
+    }
+
+    .name-list {
+        font-size: 16px; /* Ajustando o tamanho da fonte das listas */
     }
 }
