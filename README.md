@@ -74,8 +74,6 @@ Se você quiser contribuir com o projeto, sinta-se à vontade para fazer um fork
 ## 🔗 Links Importantes
 
 - [GitHub do projeto](https://github.com/seuusuario/amigo-secreto)
-- [Instagram da Agência Digital SLZ](https://www.instagram.com/agenciadigitalslz/)
-- [LinkedIn - André Lopes](https://www.linkedin.com/in/andre7lopes/)
 
 ## 📈 Estatísticas
 
@@ -85,13 +83,14 @@ Se você quiser contribuir com o projeto, sinta-se à vontade para fazer um fork
 
 Siga-me nas redes sociais ou entre em contato para sugestões ou dúvidas:
 
-- [Instagram](https://www.instagram.com/agenciadigitalslz/)
-- [Discord](https://discord.gg/yujkai)
-- [LinkedIn](https://www.linkedin.com/in/andre7lopes/)
-
----
-
-## 📜 Licença
-
-Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-```
+<div align="center">
+  <a href="https://www.instagram.com/agenciadigitalslz/" target="_blank">
+    <img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+  </a>
+  <a href="https://discord.gg/yujkai" target="_blank">
+    <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
+  </a>
+  <a href="https://www.linkedin.com/in/andre7lopes/" target="_blank">
+    <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+</div>
